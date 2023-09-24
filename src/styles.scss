@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+// ? Color variables
+$background-color: #fdfdfd;
+$color-dark: #333;
+$color-light: #fff;
+$font: "Geologica", sans-serif;
+
+$blue-color: #102f5e;
+$purple-color: #4f2bb4;
+$orange-color: #d75413;
+$pink-color: #c833ad;
+$green-color: #159287;
+
+$secondary-blue: #395169;
+$secondary-purple: #7b67b2;
+$secondary-orange: #cd7f47;
+$secondary-pink: #e671e0;
+$secondary-green: #42c5b2;
+
+// ? Font-Faces
+$font-path: 'assets/fonts/';
+
+@font-face {
+  font-family: 'Geologica';
+  src: url('#{$font-path}Geologica-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ? Global reset
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+}
+
+// ? Global styles
+body {
+  background-image: url(assets/img/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+h1,
+h3,
+h4,
+p {
+  font-family: $font;
+}
+

@@ -1,0 +1,17 @@
+<section
+  class="selected-color"
+  (click)="viewPallete()">
+  <div class="active-color selected" [attr.id]="selectedColor">
+    <app-check-icon></app-check-icon>
+  </div>
+</section>
+
+<section class="color-pallete" *ngIf="canViewPallete">
+  <div
+    *ngFor="let color of colors"
+    class="colors"
+    [attr.id]="color.id"
+    (click)="onColorClick(color.id)" >
+    <app-check-icon *ngIf="color.id === selectedColor"></app-check-icon>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+@use '../../../../../styles' as s;
+@import '../../../../shared/scss/button';
+
+// ? Container
+.todo-container {
+  max-width: 450px;
+  margin: 1.5rem auto 0;
+  background-color: s.$background-color;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+.todo-container header {
+  text-align: center;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+// ? Forms
+#todo-form,
+#edit-form {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#todo-form p,
+#edit-form p {
+  font-family: s.$font;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 0.25rem 0.5rem;
+  font-family: s.$font;
+}
+
+.form-control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control input {
+  margin-right: 0.3rem;
+  width: 100%;
+}
+
+#cancel-edit-btn {
+  margin-top: 1rem;
+}
+
+#toolbar {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+
+#toolbar h4 {
+  margin-bottom: 0.5rem;
+}
+
+#search {
+  border-right: 1px solid #ddd;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+#search form {
+  display: flex;
+}
+
+#search input {
+  width: 100%;
+  margin-right: 0.3rem;
+}
+
+#filter {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+#filter select {
+  flex: 1;
+}
