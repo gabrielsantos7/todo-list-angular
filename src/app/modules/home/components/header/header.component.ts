@@ -8,7 +8,7 @@ import Color from 'src/app/shared/models/Color';
 })
 export class HeaderComponent {
   public canViewPallete: boolean = false;
-  @Output() public eventEmitter = new EventEmitter<Color>();
+  @Output() public eventEmitter = new EventEmitter<string>();
   public selectedColor: Color = { id: 'blue', hexCode: '#102f5e' };
   public colors: Color[] = [
     { id: 'blue', hexCode: '#102f5e' },
@@ -35,6 +35,6 @@ export class HeaderComponent {
   onColorClick(id: string): void {
     this.selectedColor.id = id;
     this.canViewPallete = false;
-    this.eventEmitter.emit(this.selectedColor);
+    this.eventEmitter.emit(this.selectedColor.id);
   }
 }
