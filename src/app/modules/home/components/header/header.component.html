@@ -1,7 +1,7 @@
 <section
   class="selected-color"
   (click)="viewPallete()">
-  <div class="active-color selected" [attr.id]="selectedColor">
+  <div class="active-color selected" [attr.id]="selectedColor.id">
     <app-check-icon></app-check-icon>
   </div>
 </section>
@@ -12,6 +12,6 @@
     class="colors"
     [attr.id]="color.id"
     (click)="onColorClick(color.id)" >
-    <app-check-icon *ngIf="color.id === selectedColor"></app-check-icon>
+    <app-check-icon *ngIf="color.id === selectedColor.id"></app-check-icon>
   </div>
 </section>

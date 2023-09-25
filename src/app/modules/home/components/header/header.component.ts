@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import Color from 'src/app/shared/models/Color';
 
 @Component({
@@ -8,8 +8,9 @@ import Color from 'src/app/shared/models/Color';
 })
 export class HeaderComponent {
   public canViewPallete: boolean = false;
-  public selectedColor: string = 'blue';
-  public colors = [
+  @Output() public eventEmitter = new EventEmitter<Color>();
+  public selectedColor: Color = { id: 'blue', hexCode: '#102f5e' };
+  public colors: Color[] = [
     { id: 'blue', hexCode: '#102f5e' },
     { id: 'purple', hexCode: '#4f2bb4' },
     { id: 'orange', hexCode: '#d75413' },
@@ -17,7 +18,7 @@ export class HeaderComponent {
     { id: 'green', hexCode: '#159287' }
   ];
 
-  public secondaryColors = [
+  public secondaryColors: Color[] = [
     { id: 'blue', hexCode: '#395169' },
     { id: 'purple', hexCode: '#7b67b2' },
     { id: 'orange', hexCode: '#cd7f47' },
@@ -32,7 +33,8 @@ export class HeaderComponent {
   }
 
   onColorClick(id: string): void {
-    this.selectedColor = id;
+    this.selectedColor.id = id;
     this.canViewPallete = false;
+    this.eventEmitter.emit(this.selectedColor);
   }
 }

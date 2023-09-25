@@ -1,6 +1,6 @@
 <ng-template [ngIf]="!canDestroy">
-  <div class="todo" [ngClass]="{ done: status === true }">
-    <h3>{{ task }}</h3>
+  <div class="todo" [ngClass]="{ done: task.status === 'done' }">
+    <h3>{{ task.name }}</h3>
     <button class="finish-todo" title="Concluído" (click)="changeStatus()">
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
+import Task from '../../../../shared/models/Task';
 
 @Component({
   selector: 'app-todo',
@@ -6,9 +7,8 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
-  @Input() public task: string = '';
-  @Output() public eventEmitter = new EventEmitter<string>();
-  public status: boolean = false;
+  @Input() public task: Task = {name: '', status:'todo'};
+  @Output() public eventEmitter = new EventEmitter<Task>();
   public canDestroy: boolean = false;
 
   constructor() {
@@ -16,7 +16,7 @@ export class TodoComponent {
   }
 
   public changeStatus() {
-    this.status = !this.status;
+    this.task.status === 'todo' ?  this.task.status = 'done' : this.task.status = 'todo';
   }
 
   public destroyComponent() {
